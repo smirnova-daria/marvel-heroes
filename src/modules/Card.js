@@ -21,7 +21,7 @@ class Card extends Renderer {
 		if (this._data.movies) {
 			temp += `<p class="card__movies">Movies:</p><ul class="card__movies-list">`
 			this._data.movies.forEach(movie => {
-				temp += `<li class="card__movie-item">${movie}</li>`
+				temp += `<li data-film-name="${movie}" class="card__movie-item">${movie}</li>`
 			})
 			temp += `</ul>`
 		}
