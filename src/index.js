@@ -1,3 +1,3 @@
-import one from './modules/one'
+import getData from './modules/getData'
 
-one()
+getData('dbHeroes.json')

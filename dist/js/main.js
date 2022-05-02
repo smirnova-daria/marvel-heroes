@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("one")})();
+(()=>{"use strict";fetch("dbHeroes.json").then((t=>t.json())).then((t=>{t.forEach((t=>{const n=document.createElement("div");n.innerHTML=`\n\t\t\t\t\t<img src="${t.photo}"/>\n\t\t\t\t\t<p>${t.name}</p>\n\t\t\t\t\t<p>${t.species}</p>\n\t\t\t\t\t<p>${t.gender}</p>\n\t\t\t\t\t<p>${t.birthDay}</p>\n\t\t\t\t\t<p>${t.deathDay}</p>\n\t\t\t\t\t<p>${t.status}</p>\n\t\t\t\t\t<p>${t.actors}</p>\n\t\t\t\t`,document.body.append(n)}))})).catch((t=>console.log("Произошла ошибка "+t)))})();
