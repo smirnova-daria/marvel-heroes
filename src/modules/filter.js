@@ -10,11 +10,17 @@ const filter = () => {
 			const filterFilm = e.target.dataset['film']
 
 			cards.forEach(card => {
-				card.style.display = 'flex'
+				card.classList.remove('hide')
+				setTimeout(() => {
+					card.style.display = 'flex'
+				}, 300)
 				selectedItem.textContent = ''
 				if ((!card.querySelector(`.card__movies-list li[data-film-name="${filterFilm}"]`)) &&
 					filterFilm !== 'all') {
-					card.style.display = 'none'
+					card.classList.add('hide')
+					setTimeout(() => {
+						card.style.display = 'none'
+					}, 300)
 					selectedItem.textContent = '#' + filterFilm
 				}
 			})
