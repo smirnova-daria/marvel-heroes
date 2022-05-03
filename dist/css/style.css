@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Russo+One&display=swap");
+
+body {
+	background-image: url("../img/cosmos.jpg");
+	background-position: top;
+	background-attachment: fixed;
+	background-size: cover;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: "Russo One", sans-serif;
+	overflow-x: hidden;
+}
+.page {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.container {
+	max-width: 1160px;
+	margin: 0 auto;
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	flex: 0 0 40%;
+}
+.logo img {
+	width: 100%;
+	overflow: hidden;
+}
+h1 {
+	flex: 0 0 50%;
+	font-size: 150px;
+	color: #fff;
+	text-transform: uppercase;
+}
+main {
+	flex: 1 0 auto;
+}
+.main__switcher {
+	display: flex;
+	align-items: center;
+	background-color: rgba(24, 24, 24, 0.7);
+	margin: 30px 0;
+}
+.switcher {
+}
+.filter__list {
+	position: relative;
+	padding: 30px;
+}
+.filter__list > li {
+	display: inline-block;
+	padding: 10px;
+}
+.filter__list li,
+.switcher__list li {
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+}
+.filter__list > li {
+	font-size: 20px;
+}
+.filter__list li:hover {
+	color: rgba(255, 255, 255, 0.85);
+}
+.switcher__list li:hover {
+	color: rgba(255, 255, 255, 1);
+}
+.switcher__list {
+	position: absolute;
+	background-color: #262121;
+	border-radius: 15px;
+	padding: 20px 40px;
+	width: 400px;
+	margin-top: 10px;
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 0.3s ease 0s;
+}
+.filter__list > li:hover > .switcher__list {
+	opacity: 1;
+	z-index: 2;
+}
+.switcher__list li:not(:last-child) {
+	margin-bottom: 20px;
+}
+.selected__movie {
+	font-size: 20px;
+	position: relative;
+	color: #c9a8a8;
+}
+.cards-list {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 5%;
+}
+.card {
+	flex: 0 1 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	position: relative;
+	margin: 30px 0;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 0 30px;
+	transition: all 0.3s ease 0s;
+}
+.card:hover {
+	box-shadow: 0 0 50px #ff8ff0;
+}
+
+.card__photo {
+	width: 100%;
+	height: 700px;
+	position: relative;
+	flex-grow: 1;
+}
+.card__photo img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	transition: all 0.5s ease 0s;
+	z-index: -1;
+}
+.card:hover .card__photo img {
+	transform: scale(1.1);
+}
+.card__info {
+	font-size: 18px;
+	background-color: rgb(49, 49, 49);
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	padding: 10px;
+	text-align: end;
+	border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+}
+.card__info p {
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.card__info p span {
+	color: #c9a8a8;
+}
+.card__movies {
+	font-size: 18px;
+	background-color: rgb(49, 49, 49);
+	padding: 10px;
+	text-align: center;
+}
+
+.card__movies p {
+	color: #c9a8a8;
+	margin-bottom: 10px;
+}
+.card__movies-list li {
+	font-size: 14px;
+}
+.card__movies-list li:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.decor1 {
+	position: absolute;
+	top: 100px;
+	right: -100px;
+	width: 100px;
+	height: 100px;
+	background-image: url("../img/iron.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.decor2 {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	width: 300px;
+	height: 300px;
+	background-image: url("../img/spider.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: -1;
+}
+
+footer {
+	background-color: #262121;
+	flex: 0 0 auto;
+}
+.footer__info {
+	display: flex;
+	height: 60px;
+	align-items: center;
+	justify-content: center;
+}
+.footer__info p {
+	margin-right: 15px;
+	font-size: 18px;
+}
+.footer__socials {
+	display: flex;
+}
+.footer__link {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+.footer__link svg {
+	transition: all 0.3s ease 0s;
+}
+.footer__link:hover svg {
+	transform: scale(1.1);
+}
+.hide {
+	opacity: 1;
+	animation-name: hide;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+@keyframes hide {
+	to {
+		opacity: 0;
+	}
+}
+
+.back_to_top {
+	position: fixed;
+	bottom: 80px;
+	right: 40px;
+	z-index: 9;
+	background-image: url("../img/1492533539-arrow-33_83260.svg");
+	background-size: contain;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #808080;
+	cursor: pointer;
+	border-radius: 50%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease 0s;
+}
+
+.back_to_top:hover {
+	background-color: #e9ebec;
+}
+
+.back_to_top-show {
+	display: flex;
+}
