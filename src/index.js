@@ -10,7 +10,7 @@ const mainHeroes = document.querySelector('.main__heroes')
 const decor1 = document.querySelector('.decor1')
 const decor2 = document.querySelector('.decor2')
 
-getData('dbHeroes.json').then(data => {
+getData('dist/dbHeroes.json').then(data => {
 	const cardsList = new CardsList(mainHeroes, data)
 	cardsList.render()
 	renderSwitcher(mainSwitcher, data)

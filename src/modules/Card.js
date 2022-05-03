@@ -10,7 +10,7 @@ class Card extends Renderer {
 			return
 		}
 		this._template.classList.add('card')
-		let temp = `<div class="card__photo"><img src="${this._data.photo}" alt="${this._data.name}"/>
+		let temp = `<div class="card__photo"><img src="dist/${this._data.photo}" alt="${this._data.name}"/>
 			<div class="card__info">
 		`
 
