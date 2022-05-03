@@ -1,46 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Russo+One&display=swap");
 
 body {
-	background-image: url("../img/cosmic-background-with-colorful-laser-lights-perfect-digital-wallpaper.jpg");
-
+	background-image: url("../img/cosmos.jpg");
+	background-position: top;
+	background-attachment: fixed;
+	background-size: cover;
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Russo One", sans-serif;
 	overflow-x: hidden;
 }
-
+.page {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
 .container {
 	max-width: 1160px;
 	margin: 0 auto;
 }
-header {
-	background-image: url("../img/Marvel-Logo.jpg");
-	height: 30vh;
-	background-repeat: repeat-x;
-	background-position: center;
-	background-size: contain;
-	position: relative;
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-/* .logo {
-	position: absolute;
-	top: 20px;
-	left: 0; 
-	height: 100%;
-	width: 400px;
-	background-image: url("../img/logo.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	animation-name: animation1;
-	animation-duration: 30s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-} */
-.main__title {
-	font-size: 70px;
-	text-align: center;
+.logo {
+	flex: 0 0 40%;
+}
+.logo img {
+	width: 100%;
+	overflow: hidden;
+}
+h1 {
+	flex: 0 0 50%;
+	font-size: 150px;
+	color: #fff;
+	text-transform: uppercase;
+}
+main {
+	flex: 1 0 auto;
 }
 .main__switcher {
 	display: flex;
 	align-items: center;
+	background-color: rgba(24, 24, 24, 0.7);
+	margin: 30px 0;
 }
 .switcher {
 }
@@ -54,10 +58,19 @@ header {
 }
 .filter__list li,
 .switcher__list li {
-	font-size: 20px;
+	font-size: 16px;
 	cursor: pointer;
+	transition: all 0.3s ease 0s;
 }
-
+.filter__list > li {
+	font-size: 20px;
+}
+.filter__list li:hover {
+	color: rgba(255, 255, 255, 0.85);
+}
+.switcher__list li:hover {
+	color: rgba(255, 255, 255, 1);
+}
 .switcher__list {
 	position: absolute;
 	background-color: #262121;
@@ -84,7 +97,6 @@ header {
 .cards-list {
 	display: flex;
 	flex-wrap: wrap;
-
 	column-gap: 5%;
 }
 .card {
@@ -152,15 +164,99 @@ header {
 	color: #c9a8a8;
 	margin-bottom: 10px;
 }
+.card__movies-list li {
+	font-size: 14px;
+}
 .card__movies-list li:not(:last-child) {
 	margin-bottom: 10px;
 }
 
-/* @keyframes animation1 {
-	from {
-		left: -10%;
-	}
+.decor1 {
+	position: absolute;
+	top: 100px;
+	right: -100px;
+	width: 100px;
+	height: 100px;
+	background-image: url("../img/iron.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.decor2 {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	width: 300px;
+	height: 300px;
+	background-image: url("../img/spider.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: -1;
+}
+
+footer {
+	background-color: #262121;
+	flex: 0 0 auto;
+}
+.footer__info {
+	display: flex;
+	height: 60px;
+	align-items: center;
+	justify-content: center;
+}
+.footer__info p {
+	margin-right: 15px;
+	font-size: 18px;
+}
+.footer__socials {
+	display: flex;
+}
+.footer__link {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+.footer__link svg {
+	transition: all 0.3s ease 0s;
+}
+.footer__link:hover svg {
+	transform: scale(1.1);
+}
+.hide {
+	opacity: 1;
+	animation-name: hide;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+@keyframes hide {
 	to {
-		left: 90%;
+		opacity: 0;
 	}
-} */
+}
+
+.back_to_top {
+	position: fixed;
+	bottom: 80px;
+	right: 40px;
+	z-index: 9;
+	background-image: url("../img/1492533539-arrow-33_83260.svg");
+	background-size: contain;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #808080;
+	cursor: pointer;
+	border-radius: 50%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease 0s;
+}
+
+.back_to_top:hover {
+	background-color: #e9ebec;
+}
+
+.back_to_top-show {
+	display: flex;
+}
